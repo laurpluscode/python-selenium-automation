@@ -22,11 +22,6 @@ driver.find_element(By.ID,'ap-other-signin-issues-link')
 driver.find_element(By.ID,'createAccountSubmit')
 
 #Conditions of use link
-driver.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[4]/div[2]/a[2]")
-#Needs better Xpressions?-
-#driver.find_element(By.XPATH,"//a[@class='a-link-normal' target='_blank' rel='noopener' and @href='/gp/help/customer/display.html/ref=ap_desktop_footer_cou?ie=UTF8&amp;nodeId=508088']")
-
+driver.find_element(By.XPATH,"//a[contains (@href,’ap_desktop_footer_cou’]")
 #Privacy Notice link
-driver.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[4]/div[2]/a[2]")
-#Needs better Xpressions?-
-#driver.find_element(By.XPATH,"//a[@class ='a-link-normal' and @target ='_blank' rel='noopener' and @href=<a class="a-link-normal" target="_blank" rel="noopener" @href='/gp/help/customer/display.html/ref=ap_desktop_footer_privacy_notice?ie=UTF8&amp;nodeId=468496']")
+driver.find_element(By.XPATH,"//a[contains(@href,’ap_desktop_footer_cou’),and @class=‘a-link-normal’]")

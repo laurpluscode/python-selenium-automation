@@ -7,3 +7,15 @@ Feature: # Enter feature name here
     When Search for Anime
     And Click on search icon
     Then Search results have Anime
+
+
+    Scenario Outline: User can search for a product on Amazon2
+      Given Open Amazon page
+      When Search for <product>
+      And Click search icon
+      Then Search results have <expected_result>
+
+      Examples:
+      |product |expected_results
+      |Anime   |"Anime"
+      |Ring    |"ring"
