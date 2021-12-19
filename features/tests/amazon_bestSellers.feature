@@ -1,8 +1,7 @@
-# Created by Lauren at 12/7/21
 Feature: # Amazon Cart is empty.
   # verifies that Your Amazon Cart is empty.
 
-  Scenario: Verify links an open Amazon Bestsellers
+  Scenario: # Enter scenario name here
    Given Open Amazon page
     When  User is sign in the homepage
     And Verify that there a 5 links
