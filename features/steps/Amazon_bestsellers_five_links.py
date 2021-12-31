@@ -11,7 +11,7 @@ MWFOR = (By.XPATH,"//a[@href='/gp/most-wished-for/ref=zg_bs_tab']")
 def open_amazon(context):
     context.driver.get('https://www.amazon.com/gp/bestsellers/?ref_=nav_cs_bestsellers')
 
-@when('Click on Bestsellers')
+@when( 'User is sign in the homepage')
 def click_on_Bestsellers(context):
     context.driver.find(*BST_SELLER).click()
     sleep(1)

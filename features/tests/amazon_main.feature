@@ -13,3 +13,9 @@ Feature: Test for Amazon main page
         Given Open Amazon page
         When Click Sign In from popup
         Then Verify Sign In page opens
+
+        Scenario: Sign in pop up is visible for a few seconds
+          Given Open Amazon page
+          Then Sign in pop up is visible
+          When Wait for 8 sec
+          Then Verify if sign in pop page disappears

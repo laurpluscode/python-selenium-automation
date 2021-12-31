@@ -1,15 +1,17 @@
+from time import sleep
+
 from selenium.webdriver.common.by import By
 from behave import given, when, then
 from selenium.webdriver.support import expected_conditions as EC
 
 ANIME_MENU = (By.ID, 'nav-anime-menu')
-FOOTER_LINKS = (By.CSS, "td.navFooterDescItem a")
+FOOTER_LINKS = (By.CSS_SELECTOR, "td.navFooterDescItem a")
 SIGN_IN_BTN = (By.CSS_SELECTOR, "#nav-signin-tooltip a.nav-action-button")
 
 
-@given('Open Amazon page')
-def open_google(context):
-    context.driver.get('https://www.amazon.com/')
+# @given('Open Amazon page')
+# def open_google_(context):
+#    context.driver.get('https://www.amazon.com/')
 
 
 @when('Search for Anime')
@@ -17,9 +19,9 @@ def search_amazon(context, search_word):
     context.driver.find_element(By.ID, 'twotabsearchtextbox').send_keys('Anime')
 
 
-@when('Click search icon')
-def click_search_icon(context):
-    context.driver.find_element(By.ID, 'nav-search-submit-button').click()
+#@when('Click search icon')
+#def click_search_icon(context):
+#    context.driver.find_element(By.ID, 'nav-search-submit-button').click()
 
 
 @when('Click Orders')
@@ -32,6 +34,23 @@ def click_sign_in(context):
     e = context.driver.wait.until(EC.element_to_be_clickable(SIGN_IN_BTN), message='Signin popup not clickable')
     e.click()
 
+    element = context.driver.find_element(*SIGN_IN_BTN)
+    print(element)
+    context.driver.refresh()
+    print(element)
+    element.click()
+
+# @then('Sign in pop up is visible')
+# def verify_sign_popup_visible(context):
+# context.driver.wait.until(EC.visibility_of_element_located(SIGN_IN_BTN),message ='Sign in popup not visible'
+
+# @then('Sign in pop up disappears')
+# def verify_sign_popup_disappear(context):
+# context.driver.wait.until(EC.visibility_of_element_located(SIGN_IN_BTN),message ='Sign in popup not visible'
+
+@when('Wait for {sec}sec')
+def wait_sec(context,sec):
+    sleep(int(sec))
 
 @then('Verify Anime menu present')
 def verify_anime_present(context):
