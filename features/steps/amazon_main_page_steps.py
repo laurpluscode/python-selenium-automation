@@ -9,9 +9,10 @@ FOOTER_LINKS = (By.CSS_SELECTOR, "td.navFooterDescItem a")
 SIGN_IN_BTN = (By.CSS_SELECTOR, "#nav-signin-tooltip a.nav-action-button")
 
 
-# @given('Open Amazon page')
-# def open_google_(context):
-#    context.driver.get('https://www.amazon.com/')
+@given('Open Amazon page')
+def open_amazon(context):
+    context.driver.get('https://www.amazon.com/')
+    context.app.main_page.open()
 
 
 @when('Search for Anime')
@@ -22,6 +23,16 @@ def search_amazon(context, search_word):
 #@when('Click search icon')
 #def click_search_icon(context):
 #    context.driver.find_element(By.ID, 'nav-search-submit-button').click()
+
+#@when('Search for{keyword}')
+def search_amazon(context,keyword):
+    # context.driver.find_element(By.ID, 'twotabsearchtextbox').send_keys(keyword)
+    context.app.header.search_input(keyword)
+
+
+#@when('Click search icon')
+#def click_search_icon(context):
+#context.driver.find_element(By.ID,'nav-search-submit-button').click()
 
 
 @when('Click Orders')
