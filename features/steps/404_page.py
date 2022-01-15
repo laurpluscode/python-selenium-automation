@@ -22,13 +22,16 @@ def switch_window(context):
     windows = context.driver.window.handles
     context.driver.switch_to.window(windows[1])
 
+
 @then('Verify blog is opened')
 def verify_blog_opened(context):
-    assert 'https://www.aboutamazon.com/' in context.driver.current_url,f'Blog page did not open'
+    assert 'https://www.aboutamazon.com/' in context.driver.current_url, f'Blog page did not open'
+
 
 @then('Close blog')
 def close_blog(context):
     context.driver.close()
+
 
 @then('Return to original window')
 def return_to_original_window(context):

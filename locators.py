@@ -22,11 +22,11 @@ driver.find_element(By.XPATH, "//a[text()='Best Sellers' and @class'nav-a')")
 driver.find_element(By.XPATH, "//a[contains(text(),'Best Sell') and @class = 'nav-a ']")  # partial text
 
 # using multiple nodes:
-driver.find_element(By.XPATH,"//div[@id'=nav-xshop-container']//a[text() = 'Best Sellers']")
-driver.find_element(By.XPATH,"//div[@id'=nav-xshop-container']/div[@id ='nav-x-shop']/a[text() = 'Best Sellers']")
-driver.find_element(By.XPATH,"//select[@id ='searchDropDownBox']/option[@value='search-alias=audible']")
+driver.find_element(By.XPATH, "//div[@id'=nav-xshop-container']//a[text() = 'Best Sellers']")
+driver.find_element(By.XPATH, "//div[@id'=nav-xshop-container']/div[@id ='nav-x-shop']/a[text() = 'Best Sellers']")
+driver.find_element(By.XPATH, "//select[@id ='searchDropDownBox']/option[@value='search-alias=audible']")
 
 # only attribute
 driver.find_element(By.XPATH, "//div")
 
-driver.find_element(By.XPATH,"//select[@id ='searchDropDownBox']/option[@value='search-alias=audible']")
+driver.find_element(By.XPATH, "//select[@id ='searchDropDownBox']/option[@value='search-alias=audible']")

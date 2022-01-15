@@ -4,6 +4,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
+
 # init driver
 driver = webdriver.Chrome(executable_path='/Users/LaurenIT/Documents/GitHub/python-selenium-automation/chromedriver')
 driver.maximize_window()
@@ -20,7 +21,7 @@ search.send_keys('watches')
 sleep(4)
 
 # click search
-elememt = driver.wait.until(EC.element_to_be_clickable((By.NAME,'btnK')), message ='Search button not found')
+element = driver.wait.until(EC.element_to_be_clickable((By.NAME, 'btnK')), message='Search button not found')
 driver.find_element(By.NAME, 'btnK').click()
 
 # verify

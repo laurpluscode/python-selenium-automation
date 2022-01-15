@@ -17,7 +17,7 @@ driver.find_element(By.CSS_SELECTOR,"a[href*='ap_signin_notification_condition_o
 
 driver.find_element(By.CSS_SELECTOR,"a.[href*='ap_signin_notification_condition_of_use")
 
-# Go from parent to childern nodes:
+# Go from parent to children nodes:
 driver.find_element(By.CSS_SELECTOR,"div#legalTextRow a[href*='ap_signin_notification_privacy_notice']")
 
 # Class + attributes:

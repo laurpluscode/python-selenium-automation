@@ -16,23 +16,23 @@ def open_amazon(context):
 
 
 @when('Search for Anime')
-def search_amazon(context, search_word):
+def search_amazon(context):
     context.driver.find_element(By.ID, 'twotabsearchtextbox').send_keys('Anime')
 
 
-#@when('Click search icon')
-#def click_search_icon(context):
+# @when('Click search icon')
+# def click_search_icon(context):
 #    context.driver.find_element(By.ID, 'nav-search-submit-button').click()
 
-#@when('Search for{keyword}')
-def search_amazon(context,keyword):
+@when('Search for{keyword}')
+def search_amazon(context, keyword):
     # context.driver.find_element(By.ID, 'twotabsearchtextbox').send_keys(keyword)
     context.app.header.search_input(keyword)
 
 
-#@when('Click search icon')
-#def click_search_icon(context):
-#context.driver.find_element(By.ID,'nav-search-submit-button').click()
+# @when('Click search icon')
+# def click_search_icon(context):
+# context.driver.find_element(By.ID,'nav-search-submit-button').click()
 
 
 @when('Click Orders')
@@ -51,6 +51,7 @@ def click_sign_in(context):
     print(element)
     element.click()
 
+
 # @then('Sign in pop up is visible')
 # def verify_sign_popup_visible(context):
 # context.driver.wait.until(EC.visibility_of_element_located(SIGN_IN_BTN),message ='Sign in popup not visible'
@@ -60,8 +61,25 @@ def click_sign_in(context):
 # context.driver.wait.until(EC.visibility_of_element_located(SIGN_IN_BTN),message ='Sign in popup not visible'
 
 @when('Wait for {sec}sec')
-def wait_sec(context,sec):
+def wait_sec(context, sec):
     sleep(int(sec))
+
+
+# @when('Hover over language options')
+# def hover_lang(context):
+#   pass
+
+# @then('verify spanish option is present')
+# def verify_spanish_lang(context):
+# context.app.header.hover_lang()
+
+# @when('Select department by alias stripbooks')
+# def select_department(context):
+#   context.app.header.select()
+
+# @then('Verify books department is selected')
+# def verify_department(context):
+# context.app.search_results_page
 
 @then('Verify Anime menu present')
 def verify_anime_present(context):
@@ -71,6 +89,6 @@ def verify_anime_present(context):
 
 
 @then('Verify {expected_amount} links present')
-def verify_footer_link_amount(context):
-    expected_amount = int(expected_amount)
-    footer_links_amount = len(context.driver.find_elements(*FOOTER_LINKS))
+def verify_footer_link_amount(context, expected_amount):
+    int(expected_amount)
+    len(context.driver.find_elements(*FOOTER_LINKS))
